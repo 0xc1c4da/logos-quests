@@ -1,9 +1,0 @@
-// View <-> backend contract. SLOTs are callable from QML via the replica
-// (logos.module("quests_ui")), PROPs are pushed to every replica on change.
-// Keep slots to <= 4 arguments; pass structured data as one JSON string.
-class QuestsUi
-{
-    SLOT(QString ping(QString message))
-    PROP(QString status="Ready" READONLY)
-    PROP(int pingCount=0 READONLY)
-}

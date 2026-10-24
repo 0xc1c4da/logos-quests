@@ -1,0 +1,29 @@
+{
+  "name": "quest_editor_ui",
+  "display_name": "Quest Editor",
+  "version": "0.1.0",
+  "type": "ui_qml",
+  "interface": "universal",
+  "category": "general",
+  "description": "Quest Editor: authors quests in quests_core, the headless quest system any module can drive.",
+  "author": "0xc1c4da",
+  "main": "quest_editor_ui_plugin",
+  "icon": "src/icons/icon.png",
+  "view": "qml/Main.qml",
+  "dependencies": ["quests_core"],
+  "codegen": { "rep": "src/quest_editor_ui.rep" },
+
+  "nix": {
+    "packages": {
+      "build": [],
+      "runtime": []
+    },
+    "external_libraries": [],
+    "cmake": {
+      "find_packages": [],
+      "extra_sources": [],
+      "extra_include_dirs": [],
+      "extra_link_libraries": []
+    }
+  }
+}

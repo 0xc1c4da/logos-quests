@@ -1,0 +1,27 @@
+// View <-> backend contract for the Quest Editor.
+//
+// The backend is a thin, Qt-typed proxy over quests_core: SLOTs forward to
+// the core's module API (authoring plus the lifecycle calls the editor uses
+// to test a quest), PROPs mirror its state, and questsChanged fires on every
+// core event so the view can refetch. Keep slots to <= 4 arguments; pass
+// structured data (quest definitions) as one JSON string.
+class QuestEditorUi
+{
+    // Authoring
+    SLOT(bool saveQuest(QString questId, QString questJson))
+    SLOT(bool deleteQuest(QString questId))
+    SLOT(QString getQuest(QString questId))
+    SLOT(QString listQuests())
+
+    // Lifecycle, for trying a quest out from the editor
+    SLOT(bool startQuest(QString questId))
+    SLOT(bool completeObjective(QString questId, QString objectiveId))
+    SLOT(bool completeQuest(QString questId))
+    SLOT(bool resetQuest(QString questId))
+    SLOT(QString getProgress(QString questId))
+
+    PROP(int questCount=0 READONLY)
+    PROP(QString status="Ready" READONLY)
+
+    SIGNAL(questsChanged())
+}

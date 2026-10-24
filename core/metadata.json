@@ -1,17 +1,14 @@
 {
-  "name": "quests_ui",
-  "display_name": "Quests",
+  "name": "quests_core",
+  "display_name": "Quests Core",
   "version": "0.1.0",
-  "type": "ui_qml",
+  "type": "core",
   "interface": "universal",
   "category": "general",
-  "description": "Quests: a Logos Basecamp app with a QML view and a C++ backend in its own process.",
+  "description": "Quests core: the headless quest system. Holds quest definitions and per-quest progress. The quest editor authors quests through it, and any module can start, advance and complete them and follow its events.",
   "author": "0xc1c4da",
-  "main": "quests_ui_plugin",
-  "icon": "src/icons/icon.png",
-  "view": "qml/Main.qml",
+  "main": "quests_core_plugin",
   "dependencies": [],
-  "codegen": { "rep": "src/quests_ui.rep" },
 
   "nix": {
     "packages": {
