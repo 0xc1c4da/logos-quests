@@ -14,7 +14,10 @@
     # local core edit, build with
     #   nix build --override-input quests_core path:../core
     # In logos-workspace this follows the `quests-core` workspace input.
-    quests_core.url = "github:0xc1c4da/logos-quests?dir=core";
+    quests_core = {
+      url = "github:0xc1c4da/logos-quests?dir=core";
+      inputs.logos-module-builder.follows = "logos-module-builder";
+    };
   };
 
   outputs = inputs@{ logos-module-builder, ... }:
